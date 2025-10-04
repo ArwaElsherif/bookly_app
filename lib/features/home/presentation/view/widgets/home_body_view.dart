@@ -1,18 +1,29 @@
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/horizontal_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeBodyView extends StatelessWidget {
   const HomeBodyView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomAppBar(),
-        HorizontalListView(),
-      ],
+    return Padding(
+      padding: EdgeInsets.only(left: 20.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomAppBar(),
+          HorizontalListView(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 24.h),
+            child: Text(
+              'Best Seller',
+              style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w600),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
-
