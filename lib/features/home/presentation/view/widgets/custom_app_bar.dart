@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/constants/assets.dart';
 
@@ -8,14 +9,14 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 42),
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 42.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(AssetsData.logo, height: 20),
+          Image.asset(AssetsData.logo, height: 20.h),
           IconButton(
             onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.magnifyingGlass, size: 24),
+            icon: Icon(FontAwesomeIcons.magnifyingGlass, size: 24.sp),
           ),
         ],
       ),
