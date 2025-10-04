@@ -1,10 +1,8 @@
-import 'package:bookly_app/core/constants/constants.dart';
 import 'package:bookly_app/core/constants/assets.dart';
-import 'package:bookly_app/features/home/presentation/view/home_view.dart';
-import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text_widget.dart';
+import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import '../../../../../utils/helper/animation_helper.dart';
+import '../../../../../utils/helper/navigation_helper.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -22,7 +20,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    initSlidingAnimation();
+    initSlidingAnimation(
+      this,
+      controller: animationController,
+      slidingAnimation: slidingAnimation,
+      imageAnimation: imageAnimation,
+    );
     navigateToHome();
   }
 
@@ -42,44 +45,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
           position: imageAnimation,
           child: Image.asset(AssetsData.logo),
         ),
-        SlidingTextWidget(
+        SlidingText(
           animationController: animationController,
           slidingAnimation: slidingAnimation,
         ),
       ],
     );
-  }
-
-  void initSlidingAnimation() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 2000),
-    );
-
-    slidingAnimation = Tween<Offset>(
-      begin: Offset(0, 2),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: animationController, curve: Curves.fastOutSlowIn),
-    );
-
-    imageAnimation = Tween<Offset>(
-      begin: Offset(0, -2),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: animationController, curve: Curves.easeOut),
-    );
-
-    animationController.forward();
-  }
-
-  void navigateToHome() {
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.to(
-        () => const HomeView(),
-        transition: Transition.rightToLeftWithFade,
-        duration: kTransitionDuration,
-      );
-    });
   }
 }
