@@ -17,6 +17,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
+  late Animation<Offset> imageAnimation;
 
   @override
   void initState() {
@@ -37,7 +38,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo),
+        SlideTransition(
+          position: imageAnimation,
+          child: Image.asset(AssetsData.logo),
+        ),
         SlidingTextWidget(
           animationController: animationController,
           slidingAnimation: slidingAnimation,
@@ -51,12 +55,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     );
+
     slidingAnimation = Tween<Offset>(
       begin: Offset(0, 2),
       end: Offset.zero,
     ).animate(
       CurvedAnimation(parent: animationController, curve: Curves.fastOutSlowIn),
     );
+
+    imageAnimation = Tween<Offset>(
+      begin: Offset(0, -2),
+      end: Offset.zero,
+    ).animate(
+      CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+    );
+
     animationController.forward();
   }
 
@@ -64,7 +77,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(const Duration(seconds: 3), () {
       Get.to(
         () => const HomeView(),
-        transition: Transition.fade,
+        transition: Transition.rightToLeftWithFade,
         duration: kTransitionDuration,
       );
     });
