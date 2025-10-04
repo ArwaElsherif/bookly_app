@@ -6,6 +6,11 @@ class HomeBodyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [CustomAppBar()]);
+    return Column(
+      children: [
+      CustomAppBar(),
+    
+    ]
+    );
   }
 }
