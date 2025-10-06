@@ -26,8 +26,7 @@ class BestSellerItem extends StatelessWidget {
                 ),
               ),
             ),
-
-            SizedBox(width: 30.w),
+            SizedBox(width: 20.w),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +46,7 @@ class BestSellerItem extends StatelessWidget {
                       SizedBox(width: 18.w),
                       Icon(Icons.star, color: Colors.amber, size: 20.sp),
                       SizedBox(width: 4.w),
-                      Text('4.8 ', style: AppTextStyles.subtitle),
+                      Text('4.8 ', style: AppTextStyles.title),
                       Text('(2456)', style: AppTextStyles.body),
                     ],
                   ),

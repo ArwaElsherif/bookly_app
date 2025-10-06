@@ -12,11 +12,12 @@ class AppTextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
     color: Colors.white,
+    fontFamily: 'GT Sectra',
   );
 
   static TextStyle body = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.normal,
-        color: Colors.grey,
+    color: Colors.grey,
   );
 }
