@@ -13,21 +13,32 @@ class HomeBodyView extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 20.w),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(),
-          HorizontalListView(),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 24.h),
-            child: Text('Best Seller', style: AppTextStyles.title),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 40.w),
-            child: CustomBookItem(),
+          const CustomAppBar(),
+          Expanded(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const HorizontalListView(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20.h),
+                    child: Text('Best Seller', style: AppTextStyles.title),
+                  ),
+                  ...List.generate(
+                    10,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(bottom: 20.h),
+                      child: const CustomBookItem(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
     );
   }
 }
-

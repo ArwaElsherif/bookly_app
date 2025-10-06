@@ -8,49 +8,52 @@ class CustomBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 150.h,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8.r),
-            child: Image.asset(
-              AssetsData.testImage,
-              height: 150.h,
-              width: 100.w,
-              fit: BoxFit.cover,
+    return Padding(
+      padding: EdgeInsets.only(right: 30.w),
+      child: SizedBox(
+        width: double.infinity,
+        height: 150.h,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.r),
+              child: Image.asset(
+                AssetsData.testImage,
+                height: 150.h,
+                width: 100.w,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          SizedBox(width: 30.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Harry Potter \nand Goblet of Fire',
-                  style: AppTextStyles.subtitle,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  softWrap: true,
-                ),
-                SizedBox(height: 4.h),
-                Text('J.K. Rowling', style: AppTextStyles.body),
-                Row(
-                  children: [
-                    Text('19.99\$', style: AppTextStyles.title),
-                    SizedBox(width: 18.w),
-                    Icon(Icons.star, color: Colors.amber, size: 20.sp),
-                    SizedBox(width: 4.w),
-                    Text('4.8 ', style: AppTextStyles.subtitle),
-                    Text('(2456)', style: AppTextStyles.body),
-                  ],
-                ),
-              ],
+            SizedBox(width: 30.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Harry Potter \nand Goblet of Fire',
+                    style: AppTextStyles.subtitle,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                  ),
+                  SizedBox(height: 4.h),
+                  Text('J.K. Rowling', style: AppTextStyles.body),
+                  Row(
+                    children: [
+                      Text('19.99\$', style: AppTextStyles.title),
+                      SizedBox(width: 18.w),
+                      Icon(Icons.star, color: Colors.amber, size: 20.sp),
+                      SizedBox(width: 4.w),
+                      Text('4.8 ', style: AppTextStyles.subtitle),
+                      Text('(2456)', style: AppTextStyles.body),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
