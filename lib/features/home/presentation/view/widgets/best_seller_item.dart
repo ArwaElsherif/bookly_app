@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/constants/assets.dart';
 import '../../../../../core/theme/text_styles.dart';
 
@@ -19,11 +20,8 @@ class BestSellerItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(8.r),
               child: AspectRatio(
-                aspectRatio: 2.5 / 4, 
-                child: Image.asset(
-                  AssetsData.testImage,
-                  fit: BoxFit.cover, 
-                ),
+                aspectRatio: 2.5 / 4,
+                child: Image.asset(AssetsData.testImage, fit: BoxFit.cover),
               ),
             ),
             SizedBox(width: 20.w),
@@ -32,7 +30,7 @@ class BestSellerItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Harry Potter \nand Goblet of Fire',
+                    'Harry Potter and Goblet of Fire',
                     style: AppTextStyles.subtitle,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -43,9 +41,9 @@ class BestSellerItem extends StatelessWidget {
                   Row(
                     children: [
                       Text('19.99\$', style: AppTextStyles.title),
-                      SizedBox(width: 18.w),
-                      Icon(Icons.star, color: Colors.amber, size: 20.sp),
-                      SizedBox(width: 4.w),
+                      Spacer(),
+                      Icon(FontAwesomeIcons.solidStar, color: Colors.amber, size: 16.sp),
+                      SizedBox(width: 6.w),
                       Text('4.8 ', style: AppTextStyles.title),
                       Text('(2456)', style: AppTextStyles.body),
                     ],

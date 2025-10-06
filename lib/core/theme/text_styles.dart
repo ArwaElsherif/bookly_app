@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppTextStyles {
   static TextStyle title = TextStyle(
     fontSize: 22.sp,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w800,
     color: Colors.white,
   );
 
   static TextStyle subtitle = TextStyle(
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w500,
+    fontSize: 20.sp,
+    fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: 'GT Sectra',
   );
