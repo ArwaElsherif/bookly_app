@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/constants/assets.dart';
 import '../../../../../core/theme/text_styles.dart';
 
-class CustomBookItem extends StatelessWidget {
-  const CustomBookItem({super.key});
+class BestSellerItem extends StatelessWidget {
+  const BestSellerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
