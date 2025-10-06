@@ -18,13 +18,15 @@ class BestSellerItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8.r),
-              child: Image.asset(
-                AssetsData.testImage,
-                height: 150.h,
-                width: 100.w,
-                fit: BoxFit.cover,
+              child: AspectRatio(
+                aspectRatio: 2.5 / 4, 
+                child: Image.asset(
+                  AssetsData.testImage,
+                  fit: BoxFit.cover, 
+                ),
               ),
             ),
+
             SizedBox(width: 30.w),
             Expanded(
               child: Column(
