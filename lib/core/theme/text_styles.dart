@@ -8,15 +8,28 @@ class AppTextStyles {
     color: Colors.white,
   );
 
-  static TextStyle subtitle = TextStyle(
+  static TextStyle subtitle20 = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: 'GT Sectra',
   );
 
-  static TextStyle body = TextStyle(
+   static TextStyle subtitle30 = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+    fontFamily: 'GT Sectra',
+  );
+
+  static TextStyle body16 = TextStyle(
     fontSize: 16.sp,
+    fontWeight: FontWeight.normal,
+    color: Colors.grey,
+  );
+
+   static TextStyle body18 = TextStyle(
+    fontSize: 18.sp,
     fontWeight: FontWeight.normal,
     color: Colors.grey,
   );

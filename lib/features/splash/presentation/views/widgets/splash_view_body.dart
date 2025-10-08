@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/constants/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../core/constants/constants.dart';
 import '../../../../../utils/helper/animation_helper.dart';
 import 'sliding_text.dart';
 
@@ -41,7 +42,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       //   duration: kTransitionDuration,
       // );
        if (!mounted) return;
-      GoRouter.of(context).push('/home');
+      GoRouter.of(context).go(kHomeView);
     });
   }
 

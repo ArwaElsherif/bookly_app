@@ -8,7 +8,7 @@ abstract class AppRouter {
   static final router = GoRouter(
     routes: [
       GoRoute(
-        path: kSearchView,
+        path: kSplasView,
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(

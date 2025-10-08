@@ -18,6 +18,7 @@ class HorizontalListView extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: EdgeInsets.only(right: 20.w),
+              //2.8 / 3.9
               child: CustomItem(),
             );
           },
