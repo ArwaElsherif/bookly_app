@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/constants/constants.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/boob_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -12,14 +13,14 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent, 
+      color: Colors.transparent,
       child: InkWell(
-        borderRadius: BorderRadius.circular(8), 
-        onTap: (){
+        borderRadius: BorderRadius.circular(8),
+        onTap: () {
           GoRouter.of(context).push(kBookDetailsView);
         },
         child: Padding(
-          padding: EdgeInsets.only(right: 30.w),
+          padding: EdgeInsets.only(right: 20.w),
           child: SizedBox(
             width: double.infinity,
             height: 150.h,
@@ -29,7 +30,7 @@ class BestSellerItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.r),
                   child: AspectRatio(
-                    aspectRatio: 2.5 / 4,
+                    aspectRatio: 2.7 / 4,
                     child: Image.asset(AssetsData.testImage, fit: BoxFit.cover),
                   ),
                 ),
@@ -47,20 +48,9 @@ class BestSellerItem extends StatelessWidget {
                       ),
                       SizedBox(height: 4.h),
                       Text('J.K. Rowling', style: AppTextStyles.body16),
-                      Row(
-                        children: [
-                          Text('19.99\$', style: AppTextStyles.title),
-                          Spacer(),
-                          Icon(
-                            FontAwesomeIcons.solidStar,
-                            color: Colors.amber,
-                            size: 16.sp,
-                          ),
-                          SizedBox(width: 6.w),
-                          Text('4.8 ', style: AppTextStyles.title),
-                          Text('(2456)', style: AppTextStyles.body16),
-                        ],
-                      ),
+                      Text('19.99\$', style: AppTextStyles.title),
+                      Spacer(),
+                    BookRating(mainAxisAlignment: MainAxisAlignment.start,),
                     ],
                   ),
                 ),

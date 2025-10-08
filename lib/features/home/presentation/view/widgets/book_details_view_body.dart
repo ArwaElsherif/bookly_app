@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/presentation/view/widgets/boob_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_book_details_appbar.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_item.dart';
 import 'package:flutter/material.dart';
@@ -12,19 +13,13 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 30.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const CustomBookDetailsAppBar(),
-
           Padding(
-            padding: EdgeInsets.only(
-              top: 20.h,
-              bottom: 40.h,
-              left: 90.w,
-              right: 120.w,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.17, vertical: 20.h),  
             child: const CustomItem(aspectRatio: 2.6 / 4),
           ),
           Text(
@@ -34,23 +29,13 @@ class BookDetailsViewBody extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
           ),
-          Text('J.K. Rowling', style: AppTextStyles.body18),
+          Text('J.K. Rowling', style: AppTextStyles.body18.copyWith(fontStyle: FontStyle.italic)),
           SizedBox(height: 6.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                FontAwesomeIcons.solidStar,
-                color: Colors.amber,
-                size: 12.sp,
-              ),
-              SizedBox(width: 6.w),
-              Text('4.8 ', style: AppTextStyles.title18),
-              Text('(2456)', style: AppTextStyles.body16),
-            ],
-          ),
+          BookRating(mainAxisAlignment: MainAxisAlignment.center,),
+
         ],
       ),
     );
   }
 }
+
