@@ -8,6 +8,12 @@ class AppTextStyles {
     color: Colors.white,
   );
 
+    static TextStyle title18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+  );
+
   static TextStyle subtitle20 = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
