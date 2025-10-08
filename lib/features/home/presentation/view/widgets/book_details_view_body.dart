@@ -52,7 +52,22 @@ class BookDetailsViewBody extends StatelessWidget {
              ],
           ),
         ),
-      
+        Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10,bottom: 30, left: 30),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemCount: 10,
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: EdgeInsets.only(right: 6.w),
+                    child: CustomItem(aspectRatio: 2.6/ 4,),
+                  );
+                },
+              ),
+            ),
+          ),
       ],
     );
   }
