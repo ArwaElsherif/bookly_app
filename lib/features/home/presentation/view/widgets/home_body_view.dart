@@ -2,7 +2,6 @@ import 'package:bookly_app/features/home/presentation/view/widgets/custom_app_ba
 import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_item.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/horizontal_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theme/text_styles.dart';
 
 class HomeBodyView extends StatelessWidget {
@@ -11,7 +10,7 @@ class HomeBodyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.w),
+      padding: EdgeInsets.only(left: 20),
       child: Column(
         children: [
           const CustomAppBar(),
@@ -23,13 +22,13 @@ class HomeBodyView extends StatelessWidget {
                 children: [
                   const HorizontalListView(),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20.h),
+                    padding: EdgeInsets.symmetric(vertical: 16),
                     child: Text('Best Seller', style: AppTextStyles.title22),
                   ),
                   ...List.generate(
                     10,
                     (index) => Padding(
-                      padding: EdgeInsets.only(bottom: 20.h),
+                      padding: EdgeInsets.only(bottom: 20),
                       child: const BestSellerItem(),
                     ),
                   ),

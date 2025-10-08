@@ -19,10 +19,10 @@ class BestSellerItem extends StatelessWidget {
           GoRouter.of(context).push(kBookDetailsView);
         },
         child: Padding(
-          padding: EdgeInsets.only(right: 20.w),
+          padding: EdgeInsets.only(right: 20),
           child: SizedBox(
-            width: double.infinity,
-            height: 150.h,
+            //width: double.infinity,
+            height: MediaQuery.of(context).size.height * 0.20,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -33,7 +33,7 @@ class BestSellerItem extends StatelessWidget {
                     child: Image.asset(AssetsData.testImage, fit: BoxFit.cover),
                   ),
                 ),
-                SizedBox(width: 20.w),
+                SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class BestSellerItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 4),
                       Text('J.K. Rowling', style: AppTextStyles.body16),
                       Text('19.99\$', style: AppTextStyles.title22),
                       Spacer(),
