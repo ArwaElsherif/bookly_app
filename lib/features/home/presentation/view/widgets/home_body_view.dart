@@ -24,7 +24,7 @@ class HomeBodyView extends StatelessWidget {
                   const HorizontalListView(),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20.h),
-                    child: Text('Best Seller', style: AppTextStyles.title),
+                    child: Text('Best Seller', style: AppTextStyles.title22),
                   ),
                   ...List.generate(
                     10,

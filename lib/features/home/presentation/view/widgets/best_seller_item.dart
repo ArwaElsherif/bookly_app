@@ -2,7 +2,6 @@ import 'package:bookly_app/core/constants/constants.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/boob_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/constants/assets.dart';
 import '../../../../../core/theme/text_styles.dart';
@@ -48,7 +47,7 @@ class BestSellerItem extends StatelessWidget {
                       ),
                       SizedBox(height: 4.h),
                       Text('J.K. Rowling', style: AppTextStyles.body16),
-                      Text('19.99\$', style: AppTextStyles.title),
+                      Text('19.99\$', style: AppTextStyles.title22),
                       Spacer(),
                     BookRating(mainAxisAlignment: MainAxisAlignment.start,),
                     ],

@@ -8,7 +8,7 @@ class HorizontalListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 24.h),
+      padding: EdgeInsets.symmetric(vertical: 20.h),
       child: SizedBox(
         height: 220.h,
         child: ListView.builder(
@@ -17,7 +17,7 @@ class HorizontalListView extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: EdgeInsets.only(right: 20.w),
+              padding: EdgeInsets.only(right: 16.w),
               child: CustomItem(aspectRatio: 2.8 / 3.9,),
             );
           },

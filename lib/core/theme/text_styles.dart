@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextStyles {
-  static TextStyle title = TextStyle(
+  static TextStyle title22 = TextStyle(
     fontSize: 22.sp,
-    fontWeight: FontWeight.w800,
     color: Colors.white,
+    fontWeight: FontWeight.bold,
   );
 
     static TextStyle title18 = TextStyle(
@@ -21,8 +21,8 @@ class AppTextStyles {
     fontFamily: 'GT Sectra',
   );
 
-   static TextStyle subtitle30 = TextStyle(
-    fontSize: 30.sp,
+   static TextStyle subtitle26 = TextStyle(
+    fontSize: 26.sp,
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: 'GT Sectra',
