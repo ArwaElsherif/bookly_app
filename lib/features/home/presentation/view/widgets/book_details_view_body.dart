@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/presentation/view/widgets/boob_rating.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/books_action.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/books_details_section.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_book_details_appbar.dart';

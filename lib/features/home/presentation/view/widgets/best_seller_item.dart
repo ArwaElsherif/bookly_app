@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/constants/constants.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/boob_rating.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
