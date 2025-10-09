@@ -22,7 +22,7 @@ class BestSellerItem extends StatelessWidget {
           padding: EdgeInsets.only(right: 20),
           child: SizedBox(
             //width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.20,
+            height: MediaQuery.of(context).size.height * 0.15,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -36,20 +36,27 @@ class BestSellerItem extends StatelessWidget {
                 SizedBox(width: 16),
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
                         'Harry Potter and Goblet of Fire',
-                        style: AppTextStyles.subtitle20,
+                        style: AppTextStyles.subtitle22,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                       ),
                       SizedBox(height: 4),
                       Text('J.K. Rowling', style: AppTextStyles.body16),
-                      Text('19.99\$', style: AppTextStyles.title22),
-                      Spacer(),
-                    BookRating(mainAxisAlignment: MainAxisAlignment.start,),
+                      SizedBox(height: 4),
+                      Row(
+                        children: [
+                          Text('19.99\$', style: AppTextStyles.title22),
+                          Spacer(),
+                          BookRating(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

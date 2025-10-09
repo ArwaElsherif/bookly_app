@@ -14,8 +14,8 @@ class AppTextStyles {
     color: Colors.white,
   );
 
-  static TextStyle subtitle20 = TextStyle(
-    fontSize: 20, 
+  static TextStyle subtitle22 = TextStyle(
+    fontSize: 22, 
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontFamily: 'GT Sectra',
