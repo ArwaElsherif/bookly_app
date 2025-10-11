@@ -2,6 +2,7 @@ import 'package:bookly_app/core/constants/constants.dart';
 import 'package:bookly_app/core/routing/app_router.dart';
 import 'package:bookly_app/features/home/data/services/book_service.dart';
 import 'package:bookly_app/features/home/presentation/view_model/cubits/all_books_cubits/all_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/view_model/cubits/best_seller_cubit/best_seller_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,10 +23,21 @@ class BooklyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: BlocProvider(
-        create:
-            (context) =>
-                AllBooksCubit(BookRepository(BookService()))..fetchAllBooks(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create:
+                (context) =>
+                    AllBooksCubit(BookRepository(BookService()))
+                      ..fetchAllBooks(),
+          ),
+          BlocProvider(
+            create:
+                (context) =>
+                    BestSellerCubit(BookRepository(BookService()))
+                      ..fetchBestSellers(),
+          ),
+        ],
         child: MaterialApp.router(
           routerConfig: AppRouter.router,
           theme: ThemeData.dark().copyWith(
