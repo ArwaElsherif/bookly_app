@@ -4,14 +4,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   final TextEditingController? controller;
-const CustomSearchTextField({super.key, this.controller});
-
-
+  const CustomSearchTextField({super.key, this.controller});
   @override
   Widget build(BuildContext context) {
     return TextField(
-        controller: controller,
-
+      controller: controller,
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.r),
