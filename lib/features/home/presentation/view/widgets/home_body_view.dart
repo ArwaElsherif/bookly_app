@@ -32,7 +32,9 @@ class HomeBodyView extends StatelessWidget {
                           ),
                         );
                       } else if (state is AllBooksLoaded) {
-                        return HorizontalListView();
+                        return HorizontalListView(
+                          books: state.books,
+                        );
                       } else if (state is AllBooksError) {
                         return Center(
                           child: Padding(

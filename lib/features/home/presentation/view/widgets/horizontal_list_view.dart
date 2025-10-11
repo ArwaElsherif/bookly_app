@@ -1,9 +1,11 @@
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_item.dart';
 import 'package:flutter/material.dart';
 
-class HorizontalListView extends StatelessWidget {
-  const HorizontalListView({super.key});
+import '../../../data/models/book_model.dart';
 
+class HorizontalListView extends StatelessWidget {
+  final List<Book> books;
+  const HorizontalListView({super.key, required this.books});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,11 +15,12 @@ class HorizontalListView extends StatelessWidget {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
-          itemCount: 10,
+          itemCount: books.length,
           itemBuilder: (BuildContext context, int index) {
+            final book = books[index];
             return Padding(
-              padding: EdgeInsets.only(right: 16),
-              child: CustomItem(aspectRatio: 2.8 / 3.9,),
+              padding: const EdgeInsets.only(right: 16),
+              child: CustomItem(aspectRatio: 2.8 / 3.9, imageUrl: book.image),
             );
           },
         ),
