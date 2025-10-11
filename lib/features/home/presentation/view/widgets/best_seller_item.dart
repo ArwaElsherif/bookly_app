@@ -17,7 +17,7 @@ class BestSellerItem extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(8),
         onTap: () {
-          GoRouter.of(context).push(kBookDetailsView);
+          GoRouter.of(context).push(kBookDetailsView, extra: book);
         },
         child: Padding(
           padding: EdgeInsets.only(right: 20),
