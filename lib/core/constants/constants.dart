@@ -6,3 +6,4 @@ const kSplasView = '/';
 const kHomeView = '/home';
 const kBookDetailsView = '/bookDetails';
 const kSearchView = '/searchView';
+const baseUrl = "https://jsonkeeper.com/b/ZLSQC";
