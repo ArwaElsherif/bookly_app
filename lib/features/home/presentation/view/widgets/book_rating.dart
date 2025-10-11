@@ -5,22 +5,23 @@ import '../../../../../core/theme/text_styles.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating({
-    super.key, required this.mainAxisAlignment,
+    super.key,
+    required this.mainAxisAlignment,
+    required this.bookRating,
+    required this.reviews,
   });
-final MainAxisAlignment mainAxisAlignment;
+  final MainAxisAlignment mainAxisAlignment;
+  final double bookRating;
+  final double reviews;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        Icon(
-          FontAwesomeIcons.solidStar,
-          color: Colors.amber,
-          size: 12.sp,
-        ),
+        Icon(FontAwesomeIcons.solidStar, color: Colors.amber, size: 12.sp),
         SizedBox(width: 6.w),
-        Text('4.8 ', style: AppTextStyles.title18),
-        Text('(2456)', style: AppTextStyles.body16),
+        Text('$bookRating ', style: AppTextStyles.title18),
+        Text('($reviews)', style: AppTextStyles.body16),
       ],
     );
   }

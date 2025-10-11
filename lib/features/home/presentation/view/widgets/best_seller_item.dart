@@ -3,12 +3,13 @@ import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.d
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/constants/assets.dart';
 import '../../../../../core/theme/text_styles.dart';
+import '../../../data/models/book_model.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  final Book book;
 
+  const BestSellerItem({super.key, required this.book});
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -30,7 +31,12 @@ class BestSellerItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.r),
                   child: AspectRatio(
                     aspectRatio: 2.7 / 4,
-                    child: Image.asset(AssetsData.testImage, fit: BoxFit.cover),
+                    child: Image.network(
+                      book.image,
+                      width: 80,
+                      height: 120,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 SizedBox(width: 16),
@@ -39,21 +45,23 @@ class BestSellerItem extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        'Harry Potter and Goblet of Fire',
+                        book.title,
                         style: AppTextStyles.subtitle22,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         softWrap: true,
                       ),
                       SizedBox(height: 4),
-                      Text('J.K. Rowling', style: AppTextStyles.body16),
+                      Text(book.author, style: AppTextStyles.body16),
                       SizedBox(height: 4),
                       Row(
                         children: [
-                          Text('19.99\$', style: AppTextStyles.title22),
+                          Text('${book.price}\$', style: AppTextStyles.title22),
                           Spacer(),
                           BookRating(
                             mainAxisAlignment: MainAxisAlignment.start,
+                            bookRating: book.rating,
+                            reviews: book.reviews,
                           ),
                         ],
                       ),

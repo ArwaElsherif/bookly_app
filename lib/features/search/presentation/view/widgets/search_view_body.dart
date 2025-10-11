@@ -2,7 +2,7 @@ import 'package:bookly_app/features/search/presentation/view/widgets/custom_sear
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/theme/text_styles.dart';
-import '../../../../home/presentation/view/widgets/best_seller_item.dart';
+//import '../../../../home/presentation/view/widgets/best_seller_item.dart';
 
 class SearchViewBody extends StatefulWidget {
   const SearchViewBody({super.key});
@@ -52,13 +52,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                   children: [
                     Text('Search results', style: AppTextStyles.title22),
                     SizedBox(height: 16.h),
-                    ...List.generate(
-                      10,
-                      (index) => Padding(
-                        padding: EdgeInsets.only(bottom: 20),
-                        child: const BestSellerItem(),
-                      ),
-                    ),
+                    // ...List.generate(
+                    //   10,
+                    //   (index) => Padding(
+                    //     padding: EdgeInsets.only(bottom: 20),
+                    //     child: const BestSellerItem(),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
