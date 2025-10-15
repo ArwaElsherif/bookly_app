@@ -1,4 +1,6 @@
-class Book {
+import 'package:equatable/equatable.dart';
+
+class Book extends Equatable {
   final String id;
   final String title;
   final String author;
@@ -8,7 +10,7 @@ class Book {
   final double reviews;
   final String description;
 
-  Book( {
+  const Book({
     required this.id,
     required this.title,
     required this.author,
@@ -19,6 +21,7 @@ class Book {
     required this.description,
   });
 
+  /// ✅ fromJson (تحويل من JSON إلى كائن Book)
   factory Book.fromJson(Map<String, dynamic> json) {
     return Book(
       id: json['id'].toString(),
@@ -31,4 +34,54 @@ class Book {
       description: json['description'] ?? '',
     );
   }
+
+  /// ✅ toJson (تحويل من كائن Book إلى JSON)
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'author': author,
+      'image': image,
+      'price': price,
+      'rating': rating,
+      'reviews': reviews,
+      'description': description,
+    };
+  }
+
+  /// ✅ copyWith (تحديث بعض القيم فقط)
+  Book copyWith({
+    String? id,
+    String? title,
+    String? author,
+    String? image,
+    double? price,
+    double? rating,
+    double? reviews,
+    String? description,
+  }) {
+    return Book(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      author: author ?? this.author,
+      image: image ?? this.image,
+      price: price ?? this.price,
+      rating: rating ?? this.rating,
+      reviews: reviews ?? this.reviews,
+      description: description ?? this.description,
+    );
+  }
+
+  /// ✅ Equatable props
+  @override
+  List<Object?> get props => [
+    id,
+    title,
+    author,
+    image,
+    price,
+    rating,
+    reviews,
+    description,
+  ];
 }
