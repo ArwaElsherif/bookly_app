@@ -21,7 +21,6 @@ class Book extends Equatable {
     required this.description,
   });
 
-  /// ✅ fromJson (تحويل من JSON إلى كائن Book)
   factory Book.fromJson(Map<String, dynamic> json) {
     return Book(
       id: json['id'].toString(),
@@ -35,7 +34,6 @@ class Book extends Equatable {
     );
   }
 
-  /// ✅ toJson (تحويل من كائن Book إلى JSON)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -49,7 +47,6 @@ class Book extends Equatable {
     };
   }
 
-  /// ✅ copyWith (تحديث بعض القيم فقط)
   Book copyWith({
     String? id,
     String? title,
@@ -72,7 +69,6 @@ class Book extends Equatable {
     );
   }
 
-  /// ✅ Equatable props
   @override
   List<Object?> get props => [
     id,

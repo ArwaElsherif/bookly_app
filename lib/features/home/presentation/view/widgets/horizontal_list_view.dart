@@ -1,10 +1,12 @@
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_item.dart';
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
+import '../../../../../core/constants/constants.dart';
 import '../../../data/models/book_model.dart';
 
 class HorizontalListView extends StatelessWidget {
   final List<Book> books;
+
   const HorizontalListView({super.key, required this.books});
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,12 @@ class HorizontalListView extends StatelessWidget {
             final book = books[index];
             return Padding(
               padding: const EdgeInsets.only(right: 16),
-              child: CustomItem(aspectRatio: 2.8 / 3.9, imageUrl: book.image),
+              child: InkWell(
+                onTap: () {
+                  GoRouter.of(context).push(kBookDetailsView, extra: book);
+                },
+                child: CustomItem(aspectRatio: 2.8 / 3.9, imageUrl: book.image),
+              ),
             );
           },
         ),
